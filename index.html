@@ -578,14 +578,14 @@ EC2203 | Royal Holloway | 2020/21
 <ul>
 <li><p><strong>Explained variance</strong>: variation in <span class="math inline">\(\hat{Score}_i\)</span></p>
 <p>Note: variation in <span class="math inline">\(\hat{Score}_i = \hat{\beta}_0 + \hat{\beta}_1 STR_i\)</span> is driven by variation in the regressor <span class="math inline">\(STR_i\)</span>.</p></li>
-<li><p><strong>Residual variance</strong>: variation in <span class="math inline">\(\hat{u}_i\)</span></p>
-<p>Note: <span class="math inline">\(\hat{Score}_i\)</span> and <span class="math inline">\(\hat{u}_i\)</span> are uncorrelated by virtue of OLS.</p></li>
+<li><p><strong>Residual variance</strong>: variation in <span class="math inline">\(\hat{u}_i\)</span></p></li>
+<li><p><span class="math inline">\(\hat{Score}_i\)</span> and <span class="math inline">\(\hat{u}_i\)</span> are uncorrelated by virtue of OLS.</p></li>
 </ul>
 </section>
 <section id="total-explained-and-residual-sum-of-squares" class="slide level2">
 <h2>Total, Explained and Residual Sum of Squares</h2>
 <div class="box">
-<p><span class="math display">\[TSS = \sum_{i=1}^n \left(Score_i - \overline{Score}\right)^2\]</span> <span class="math display">\[ESS = \sum_{i=1}^n \left(\hat{Score}_i - \overline{Score}\right)^2\]</span> <span class="math display">\[RSS = \sum_{i=1}^n \left(Y_i - \hat{Y}_i\right)^2 = \sum_{i=1}^n \hat{u}^2_i\]</span></p>
+<p><span class="math display">\[TSS = \sum_{i=1}^n \left(Score_i - \overline{Score}\right)^2\]</span> <span class="math display">\[ESS = \sum_{i=1}^n \left(\hat{Score}_i - \overline{Score}\right)^2\]</span> <span class="math display">\[RSS = \sum_{i=1}^n \left(Score_i - \hat{Score}_i\right)^2 = \sum_{i=1}^n \hat{u}^2_i\]</span></p>
 <p><span class="math display">\[TSS = ESS + RSS\]</span></p>
 </div>
 </section>
@@ -593,7 +593,7 @@ EC2203 | Royal Holloway | 2020/21
 <h2>The standard error of the regression</h2>
 <ul>
 <li><p>The <strong>standard error of the regression (<span class="math inline">\(SER\)</span>)</strong> is an estimator of the standard deviation of the error term <span class="math inline">\(u\)</span></p></li>
-<li><p>The <span class="math inline">\(SER\)</span>, often denoted <span class="math inline">\(s_{\hat{u}}\)</span>, is constructed from the regression residuals <span class="math inline">\((\hat{u}_i;i=1,2,...,n)\)</span>:</p>
+<li><p>The <span class="math inline">\(SER\)</span>, often denoted <span class="math inline">\(s_{\hat{u}}\)</span>, is constructed from the regression residuals <span class="math inline">\((\hat{u}_i;i=1,\ldots,n)\)</span>:</p>
 <p><span class="math display">\[s_{\hat{u}} = \sqrt{\frac{1}{n-2}\sum_{i=1}^n \hat{u}_i^2} = \sqrt{\frac{RSS}{n-2}}\]</span></p></li>
 </ul>
 </section>
@@ -626,8 +626,8 @@ EC2203 | Royal Holloway | 2020/21
 <div class="box">
 <p><span class="math display">\[R^2 = \frac{ESS}{TSS} = 1 - \frac{RSS}{TSS}\]</span></p>
 </div></li>
-<li><p><span class="math inline">\(R^2 \in [0,1]\)</span> with higher values indicating a better (in-sample) <strong>fit</strong></p></li>
-<li><p>The <span class="math inline">\(R^2\)</span> is the <strong>share</strong> of variation in <span class="math inline">\(Score_i\)</span> that is “explained” by <span class="math inline">\(STR_i\)</span>.</p></li>
+<li><p><span class="math inline">\(R^2 \in [0,1]\)</span>; higher values indicate better in-sample <strong>fit</strong></p></li>
+<li><p>The <span class="math inline">\(R^2\)</span> is the <strong>share</strong> of variation in <span class="math inline">\(Score_i\)</span> that is “explained” by variation in <span class="math inline">\(STR_i\)</span>.</p></li>
 </ul>
 </section>
 <section id="the-r2-in-r" class="slide level2">

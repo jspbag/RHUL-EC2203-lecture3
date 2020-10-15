@@ -123,14 +123,14 @@ $$Score_i = \hat{Score}_i + \hat{u}_i; \quad i = 1,\ldots,n$$
   
 - **Residual variance**: variation in $\hat{u}_i$
 
-  Note: $\hat{Score}_i$ and $\hat{u}_i$ are uncorrelated by virtue of OLS.
+- $\hat{Score}_i$ and $\hat{u}_i$ are uncorrelated by virtue of OLS.
 
 ## Total, Explained and Residual Sum of Squares
 
 <div class="box">
 $$TSS = \sum_{i=1}^n \left(Score_i - \overline{Score}\right)^2$$ 
 $$ESS = \sum_{i=1}^n \left(\hat{Score}_i - \overline{Score}\right)^2$$
-$$RSS = \sum_{i=1}^n \left(Y_i - \hat{Y}_i\right)^2 = \sum_{i=1}^n \hat{u}^2_i$$
+$$RSS = \sum_{i=1}^n \left(Score_i - \hat{Score}_i\right)^2 = \sum_{i=1}^n \hat{u}^2_i$$
 
 $$TSS = ESS + RSS$$
 </div>
@@ -139,7 +139,7 @@ $$TSS = ESS + RSS$$
 
 - The **standard error of the regression ($SER$)** is an estimator of the standard deviation of the error term $u$
 
-- The $SER$, often denoted $s_{\hat{u}}$, is constructed from the regression residuals $(\hat{u}_i;i=1,2,...,n)$:
+- The $SER$, often denoted $s_{\hat{u}}$, is constructed from the regression residuals $(\hat{u}_i;i=1,\ldots,n)$:
 
   $$s_{\hat{u}} = \sqrt{\frac{1}{n-2}\sum_{i=1}^n \hat{u}_i^2} = \sqrt{\frac{RSS}{n-2}}$$
 
@@ -158,9 +158,9 @@ summary(lm1) # Print summary of lm1-list to console
   $$R^2 = \frac{ESS}{TSS} = 1 - \frac{RSS}{TSS}$$
   </div>
 
-- $R^2 \in [0,1]$ with higher values indicating a better (in-sample) **fit** 
+- $R^2 \in [0,1]$; higher values indicate better in-sample **fit** 
 
-- The $R^2$ is the **share** of variation in $Score_i$ that is "explained" by $STR_i$.
+- The $R^2$ is the **share** of variation in $Score_i$ that is "explained" by variation in $STR_i$.
 
 ## The $R^2$ in R
 
